@@ -63,23 +63,23 @@ Your first step should be to create a new Git repository that will contain both 
       const app = express();
       app.use(express.json());
       // Import routes and middleware here
-​
       const PORT = 3001;
       app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
       ```
 ​
 4. **Middleware**:
-​
-    * In `middleware`, create `authMiddleware.js`.
-    * Implement JWT token authentication logic.
-​
-5. **Routes**:
-​
-    * In `routes`, create `eventsRoutes.js` and `usersRoutes.js`.
-    * Implement event handling and user authentication routes.
-    * Authenticated users should be able to:
-      1. Register for existing events
-      2. Add new events
-      3. See available events
-    * Unauthenticated users should only be able to:
-      1. See available events
+
+  * In `middleware`, create `authMiddleware.js`.
+  * Implement JWT token authentication logic.
+
+  
+5. **Routes**:​
+
+  * In `routes`, create `eventsRoutes.js` and `usersRoutes.js`.
+  * Implement event handling and user authentication routes.
+  * Authenticated users should be able to:
+    1. Register for existing events
+    2. Add new events
+    3. See available events
+  * Unauthenticated users should only be able to:
+    1. See available events
