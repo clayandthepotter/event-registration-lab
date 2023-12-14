@@ -1,5 +1,9 @@
 
 
+
+
+
+
 // REQUIREMENTS ----------------------------------------------------
 
 // require express
@@ -10,35 +14,30 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 
 
+// MIDDLEWARE ----------------------------------------------------
+// require/import middleware
+const authMiddleware = require('./middleware/authMiddleware');
+
+
+// ROUTES ----------------------------------------------------
+// require routes
+const eventsRoutes = require('./routes/eventsRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 
 // CREATE APP ----------------------------------------------------
 // create app from express
 const app = express();
+
+// PROTOCOLS ----------------------------------------------
+// enable cors
+app.use(cors());
 // create expression to parse json
 app.use(express.json());
 
 
 
 
-// MIDDLEWARE ----------------------------------------------------
-// require/import middleware
-const authMiddleware = require('./middleware/authMiddleware');
 
-
-
-// TEST DATA ----------------------------------------------------
-// in-memory events database for testing
-const events = [
-	{
-		id: 1,
-		name: 'Tech Conference 2023',
-		description:
-			'An annual conference for tech enthusiasts, featuring talks from industry leaders, workshops, and networking opportunities.',
-		date: '2023-07-15',
-		location: 'Convention Center, Silicon Valley',
-		attendees: [1], // contains user IDs
-	},
-];
 
 

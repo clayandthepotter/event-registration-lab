@@ -41,8 +41,9 @@ Build an event registration website using Node.js, Express, and React. Implement
 ## Instructions
 Your first step should be to create a new Git repository that will contain both your client and server folders.
 ​
-### Backend Setup
-1. **Initialize Backend**:
+## Backend Setup
+
+### 1. **Initialize Backend**:
    ```bash
    mkdir event-server
    cd event-server
@@ -50,13 +51,13 @@ Your first step should be to create a new Git repository that will contain both 
    npm install express jsonwebtoken
    ```
 ​
-2. **Setup File Structure**:
-​
+### 2. **Setup File Structure**:
   * Create `index.js` in the root.
   * Create `routes` and `middleware` folders.
+
 ​
-3. **index.js**:
-  
+### 3. **index.js**:
+
     * Setup Express and import `routes` and `middleware`.
       ```js
       const express = require('express');
@@ -67,14 +68,13 @@ Your first step should be to create a new Git repository that will contain both 
       app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
       ```
 ​
-4. **Middleware**:
+### 4. **Middleware**:
 
   * In `middleware`, create `authMiddleware.js`.
-  * Implement JWT token authentication logic.
-
+  * Implement JWT token authentication logic. 
   
-5. **Routes**:​
 
+### 5. **Routes**:​
   * In `routes`, create `eventsRoutes.js` and `usersRoutes.js`.
   * Implement event handling and user authentication routes.
   * Authenticated users should be able to:
@@ -83,3 +83,13 @@ Your first step should be to create a new Git repository that will contain both 
     3. See available events
   * Unauthenticated users should only be able to:
     1. See available events
+
+### 6. **Register**
+  * Routes to use for events:
+    * View all events (unprotected): `/events`
+    * Register (protected): `/events/register`
+    * Add Event (protected): `/events/add-event`
+
+  * Routes to use for users (all unprotected):
+    * Log In: `/users/login`
+    * Register: `/users/register`
