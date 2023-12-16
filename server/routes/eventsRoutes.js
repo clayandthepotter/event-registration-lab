@@ -52,3 +52,7 @@ router.post('/register', (req, res) => {
 	// send back a 201 status code along with newTodo in json format
 	res.status(201).json(newEvent);
 });
+
+
+// export the router to be used in the main file
+ module.exports = router;

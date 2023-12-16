@@ -17,7 +17,19 @@ const users = [
 	},
 ];
 
+
 // base route: /users
+
+
+// GET req for registration page
+router.get('/register', (req, res) => {
+	res.send('Login page');
+});
+
+// GET req for login page
+router.get('/login', (req, res) => {
+	res.send('Login page');
+});
 
 // create post handler to handle authentication
 router.post('/login', (req, res) => {
@@ -43,3 +55,7 @@ router.post('/login', (req, res) => {
 		res.status(401).send('Authentication Failed');
 	}
 });
+
+
+// export the router to be used in the main file
+ module.exports = router;
