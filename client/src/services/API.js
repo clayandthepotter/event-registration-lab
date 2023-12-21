@@ -1,12 +1,14 @@
 import axios from 'axios';
 
+const BASE_URL = 'http://localhost:3001';
+
 const fetchEvents = async () => {
-  axios
-		.get('/')
-		.then((response) => {
-			console.log(response.data);
-		})
-		.catch((error) => {
-			console.error('There was an error!', error);
-		});
-}
+	try {
+		const response = await axios.get(`${BASE_URL}/events`);
+		console.log(response.data);
+	} catch (error) {
+		console.error('There was an error!', error);
+	}
+};
+
+export default fetchEvents
